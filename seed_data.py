@@ -7,7 +7,7 @@ from crud import (
 
 def seed():
     session = SessionLocal()
-    print("\n📦 Seeding database with realistic data...\n")
+    print("\n Seeding database with realistic data...\n")
 
     # ── Users ─────────────────────────────────────────────────────────────────
     alice, _ = get_or_create_user(session, "alice_dev", "alice@example.com", "securepass1")
@@ -41,7 +41,7 @@ def seed():
                    "Full-stack developer and open-source contributor.",
                    "Kenya", "https://daveomondi.com")
 
-    print("  📋 Profiles created (1:1 relationship)")
+    print("   Profiles created (1:1 relationship)")
 
     # ── Courses (1:N) ─────────────────────────────────────────────────────────
     from models.course import Course
@@ -72,7 +72,7 @@ def seed():
                        price=44.99, language="English",
                        tag_names=["python", "fastapi", "backend", "api"])
 
-    print(f"  📚 Courses: {c1.title}, {c2.title}, {c3.title}, {c4.title}")
+    print(f"   Courses: {c1.title}, {c2.title}, {c3.title}, {c4.title}")
     print("     (1:N — Alice and Bob are instructors with multiple courses)")
 
     # ── Enrollments (N:N) ─────────────────────────────────────────────────────
@@ -91,7 +91,7 @@ def seed():
     update_progress(session, alice.id, c2.id, 30.0)
 
     print("  🎓 Enrollments created (N:N with progress tracking)")
-    print("\n✅ Database seeded successfully!\n")
+    print("\n Database seeded successfully!\n")
 
     session.close()
 
